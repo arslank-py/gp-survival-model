@@ -1,5 +1,5 @@
 """
-Bayesian GP survival model w/ inducing points + VI + Cholesky approximation
+Bayesian GP + Neural Cox survival model
 """
 
 import copy
