@@ -14,13 +14,6 @@ A hierarchical Bayesian survival analysis model integrating multi-omics genomic 
   - **Random Effects**: Gaussian Process with separable spatiotemporal covariance (Matern-3/2 × RBF kernel, 200 inducing points)
 - **Training**: Variational Inference with ELBO optimization, KL warm-up, separate learning rates for GP and MLP components
 
-## Performance
-
-- **C-index**: 0.80
-- **Time-dependent AUC**: 0.85
-- **Integrated Brier Score**: 0.1416
-- **Calibration Error**: 0.0885
-
 ## Requirements
 
 - Python 3.8+
