@@ -1,5 +1,5 @@
 """
-Main script for survival model w/ TCGA Pan-Cancer multi-omics data
+Main script for survival model 
 """
 
 import numpy as np
@@ -33,7 +33,7 @@ from gp_survival_model_vi import VariationalGPSurvivalModel
 
 
 def normalize_sample_id(sample_id: str) -> str:
-    """Normalize TCGA-style sample IDs to the patient-level code (TCGA-XX-XXXX)"""
+    """Normalize sample IDs to the patient-level code (TCGA-XX-XXXX)"""
     if sample_id is None:
         return ""
     sid = str(sample_id).strip().upper()
@@ -107,7 +107,7 @@ def align_and_append_pathway_features(
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     Align pathway scores to the current sample ordering and append to latent features;
-    drops samples without pathway scores
+    drop samples without pathway scores
     """
     if sample_ids is None:
         raise ValueError("Sample IDs are required to align pathway features.")
