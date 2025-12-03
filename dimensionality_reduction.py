@@ -1,5 +1,5 @@
 """
-Dimensionality reduction for multi-omics data
+Dimensionality reduction for multiomics data
 """
 
 import numpy as np
@@ -13,7 +13,7 @@ import warnings
 
 
 class VAE(nn.Module):
-    """Variational autoencoder for non-linear dimensionality reduction"""
+    """Variational autoencoder for multiomics dimensionality reduction"""
     
     def __init__(self, input_dim: int, latent_dim: int = 50, hidden_dims: list = None):
         super(VAE, self).__init__()
@@ -80,7 +80,7 @@ class VAE(nn.Module):
 
 
 class VAEReducer:
-    """VAE dimensionality reduction wrapper"""
+    """VAE reduction wrapper"""
     
     def __init__(self, n_components: int = 50, hidden_dims: list = None, 
                  epochs: int = 100, batch_size: int = 256, device: str = None,
@@ -124,7 +124,7 @@ class VAEReducer:
             survival_head: Linear layer to predict risk scores from z
         
         Returns:
-            Negative partial log-likelihood (to be minimized, normalized by batch size)
+            Negative partial log-likelihood (normalized by batch size)
         """
         risk_scores = survival_head(z).squeeze()
         
@@ -156,7 +156,7 @@ class VAEReducer:
     
     def fit_transform(self, X: np.ndarray, times: np.ndarray, events: np.ndarray) -> np.ndarray:
         """
-        Train supervised VAE and transform data to latent space.
+        Train supervised VAE and transform data to latent space
         
         Args:
             X: Feature matrix (n_samples, n_features)
@@ -312,7 +312,7 @@ def reduce_dimensionality(X: np.ndarray, method: str = 'vae',
                          times: np.ndarray = None,
                          events: np.ndarray = None, **kwargs) -> Tuple[np.ndarray, object]:
     """
-    Convenience function for supervised VAE dimensionality reduction
+    Convenience function for supervised VAE
     
     Args:
         X: Feature matrix (n_samples, n_features)
