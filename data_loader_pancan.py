@@ -1,5 +1,5 @@
 """
-Data loader for TCGA Pan-Cancer datasets w/ alignment and integration of pan-cancer omics data
+Data loader for TCGA Pan-Cancer datasets
 """
 
 import pandas as pd
@@ -308,7 +308,7 @@ class PanCancerOmicsDataLoader(MultiOmicsDataLoader):
                         mutation_file: str = None,
                         rppa_file: Optional[str] = None) -> pd.DataFrame:
         """
-        Load and integrate TCGA Pan-Cancer data.
+        Load and integrate TCGA Pan-Cancer data
         
         Returns:
             Integrated DataFrame with features and survival data
