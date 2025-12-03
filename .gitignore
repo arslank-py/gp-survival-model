@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Results and outputs (data files are included)
+results/
+*.png
+*.jpg
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model checkpoints
+*.pt
+*.pth
+checkpoints/
+
+# Exclude large data files
+data/*.xena
+data/*.by_genes
+data/*.npz
+data/*.pkl
+
+# Exclude large data files (>100MB)
+data/tcga_brca_multiomics_survival.csv
+data/tcga_pancan_ssGSEA.txt
