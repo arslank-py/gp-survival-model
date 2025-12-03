@@ -35,12 +35,6 @@ Thumbs.db
 *.pth
 checkpoints/
 
-# Exclude large data files
-data/*.xena
-data/*.by_genes
-data/*.npz
-data/*.pkl
-
-# Exclude large data files (>100MB)
-data/tcga_brca_multiomics_survival.csv
-data/tcga_pancan_ssGSEA.txt
+# Exclude all TCGA data files (download instructions in README)
+data/*
+!data/.gitkeep
