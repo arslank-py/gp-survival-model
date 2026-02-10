@@ -4,15 +4,15 @@ A hierarchical Bayesian survival analysis model integrating multi-omics genomic 
 
 ## Model Architecture
 
-- **Input**: Multi-omics features (expression, copy number, mutations, RPPA) + pathway activity scores
+- **Input**: Multi-omics features (expression, copy number, mutations, RPPA) + pathway activity scores.
 - **Dimensionality Reduction**: 
-  - Supervised VAE for survival-aware multi-omics reduction (86k → 50 latent dimensions)
-  - PCA for pathway activity reduction (1387 → 200 components)
+  - Supervised VAE for survival-aware multi-omics reduction (86k → 50 latent dimensions).
+  - PCA for pathway activity reduction (1387 → 200 components).
 - **Hazard Model**: Hybrid Cox proportional hazards architecture with:
-  - **Baseline**: Piecewise constant hazard (50 intervals)
-  - **Main Effects**: 4-layer MLP (512→256→128→64→1)
-  - **Random Effects**: Gaussian Process with separable spatiotemporal covariance (Matern-3/2 × RBF kernel, 200 inducing points)
-- **Training**: Variational Inference with ELBO optimization, KL warm-up, separate learning rates for GP and MLP components
+  - **Baseline**: Piecewise constant hazard (50 intervals);
+  - **Main Effects**: 4-layer MLP (512→256→128→64→1);
+  - **Random Effects**: Gaussian Process with separable spatiotemporal covariance (Matern-3/2 × RBF kernel, 200 inducing points).
+- **Training**: Variational Inference with ELBO optimization, KL warm-up, separate learning rates for GP and MLP components.
 
 ## Requirements
 
@@ -62,7 +62,7 @@ The model requires TCGA Pan-Cancer multi-omics data files. Download the followin
 6. **Pathway Activity Scores (ssGSEA)**
    - File: `tcga_pancan_ssGSEA.txt`
    - Source: [TCGA Pan-Cancer Atlas](https://gdc.cancer.gov/about-data/publications/pancanatlas)
-   - Note: This file contains pre-computed ssGSEA pathway activity scores
+   - Note: This file contains pre-computed ssGSEA pathway activity scores.
 
 ### Alternative: BRCA Multi-Omics Data
 
@@ -72,7 +72,7 @@ If you prefer to use a single cancer type for testing:
 
 ## Usage
 
-1. **Download all required data files** and place them in the `data/` directory
+1. **Download all required data files** and place them in the `data/` directory.
 
 2. **Run the model**:
    ```bash
